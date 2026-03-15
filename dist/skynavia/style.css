@@ -1,0 +1,464 @@
+/*
+Theme Name: SC LIFE Theme
+Theme URI: https://example.com/sc-life-theme
+Author: OpenAI Codex
+Author URI: https://openai.com/
+Description: A custom WordPress theme for a trustworthy B2B corporate website.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 8.0
+Text Domain: sc-life-theme
+*/
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #eef4f8;
+  --text: #020617;
+  --muted: #475569;
+  --line: rgba(15, 23, 42, 0.12);
+  --primary: #0f172a;
+  --secondary: #334155;
+  --cta: #0369a1;
+  --cta-strong: #075985;
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --container: 1160px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(3, 105, 161, 0.08), transparent 24%),
+    linear-gradient(180deg, #fcfdff 0%, var(--bg) 55%, #ffffff 100%);
+}
+
+body.admin-bar .site-header {
+  top: 32px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(calc(100% - 32px), var(--container));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 18px 0;
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-branding {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cta), var(--cta-strong));
+  box-shadow: 0 0 0 8px rgba(3, 105, 161, 0.12);
+}
+
+.brand-text {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-title,
+.section-title,
+.hero-title,
+.card-title,
+.metric-value,
+.post-title {
+  font-family: "Lexend", sans-serif;
+}
+
+.brand-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.brand-tagline {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.main-navigation .menu,
+.main-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-navigation a,
+.contact-link {
+  color: var(--muted);
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible,
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--cta), var(--cta-strong));
+  box-shadow: 0 12px 28px rgba(3, 105, 161, 0.2);
+}
+
+.button-secondary {
+  color: var(--primary);
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.hero,
+.section {
+  padding: 72px 0;
+}
+
+.hero-grid,
+.trust-grid,
+.service-grid,
+.metric-grid,
+.footer-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.hero-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--cta-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.hero-copy p,
+.section-copy {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.hero-actions,
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.panel,
+.trust-card,
+.service-card,
+.metric-card,
+.content-card,
+.post-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel {
+  padding: 20px;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.panel-label {
+  display: inline-block;
+  color: var(--cta-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  margin: 12px 0 6px;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trust-card,
+.service-card,
+.metric-card,
+.post-card {
+  padding: 24px;
+}
+
+.section-title {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.card-title,
+.post-title {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.metric-card {
+  text-align: center;
+}
+
+.metric-card .metric-value {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.content-card {
+  padding: 32px;
+}
+
+.entry-content,
+.entry-summary {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.site-footer {
+  padding: 36px 0 48px;
+}
+
+.footer-grid {
+  grid-template-columns: 1fr auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.site-info {
+  color: var(--muted);
+}
+
+.site-info p {
+  margin: 0;
+}
+
+.post-list {
+  display: grid;
+  gap: 18px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.archive-header {
+  margin-bottom: 28px;
+}
+
+.site-main {
+  padding-bottom: 48px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(3, 105, 161, 0.28);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1080px) {
+  .header-inner,
+  .hero-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
+  }
+
+  .trust-grid,
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .section {
+    padding: 52px 0;
+  }
+
+  .container {
+    width: min(calc(100% - 20px), var(--container));
+  }
+
+  .main-navigation .menu,
+  .main-navigation ul,
+  .header-actions,
+  .hero-actions,
+  .section-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .trust-grid,
+  .service-grid,
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

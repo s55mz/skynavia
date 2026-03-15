@@ -1,0 +1,75 @@
+<?php
+/**
+ * Theme setup and asset loading.
+ *
+ * @package SC_LIFE_Theme
+ */
+
+if (!defined('ABSPATH')) {
+	exit;
+}
+
+require_once get_template_directory() . '/inc/theme-updater.php';
+
+function sc_life_theme_setup(): void
+{
+	add_theme_support('title-tag');
+	add_theme_support('post-thumbnails');
+	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script'));
+
+	register_nav_menus(
+		array(
+			'primary' => __('Primary Menu', 'sc-life-theme'),
+			'footer'  => __('Footer Menu', 'sc-life-theme'),
+		)
+	);
+}
+add_action('after_setup_theme', 'sc_life_theme_setup');
+
+function sc_life_theme_enqueue_assets(): void
+{
+	wp_enqueue_style(
+		'sc-life-theme-fonts',
+		'https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap',
+		array(),
+		null
+	);
+
+	wp_enqueue_style(
+		'sc-life-theme-style',
+		get_stylesheet_uri(),
+		array('sc-life-theme-fonts'),
+		wp_get_theme()->get('Version')
+	);
+}
+add_action('wp_enqueue_scripts', 'sc_life_theme_enqueue_assets');
+
+function sc_life_theme_updater_config(): array
+{
+	$config = array(
+		'repository'    => defined('SC_LIFE_GITHUB_REPOSITORY') ? SC_LIFE_GITHUB_REPOSITORY : 's55mz/skynavia',
+		'release_asset' => defined('SC_LIFE_GITHUB_RELEASE_ASSET') ? SC_LIFE_GITHUB_RELEASE_ASSET : get_stylesheet() . '.zip',
+		'token'         => defined('SC_LIFE_GITHUB_TOKEN') ? SC_LIFE_GITHUB_TOKEN : '',
+		'cache_ttl'     => HOUR_IN_SECONDS,
+	);
+
+	return apply_filters('sc_life_theme_updater_config', $config);
+}
+
+function sc_life_theme_fallback_menu(): void
+{
+	echo '<ul class="menu">';
+	echo '<li><a href="#services">' . esc_html__('Services', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#trust">' . esc_html__('Trust', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#metrics">' . esc_html__('Metrics', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#contact">' . esc_html__('Contact', 'sc-life-theme') . '</a></li>';
+	echo '</ul>';
+}
+
+add_action(
+	'after_setup_theme',
+	static function (): void {
+		new SC_LIFE_Theme_Updater(sc_life_theme_updater_config());
+	},
+	20
+);
