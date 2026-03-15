@@ -14,7 +14,7 @@ get_header();
 <section class="section">
 	<div class="container">
 		<header class="archive-header">
-			<p class="eyebrow"><?php esc_html_e('Latest Posts', 'sc-life-theme'); ?></p>
+			<p class="eyebrow"><?php esc_html_e('お知らせ', 'sc-life-theme'); ?></p>
 			<h1 class="section-title"><?php bloginfo('name'); ?></h1>
 			<p class="section-copy"><?php bloginfo('description'); ?></p>
 		</header>
@@ -42,8 +42,8 @@ get_header();
 			</div>
 		<?php else : ?>
 			<div class="content-card">
-				<h2 class="section-title"><?php esc_html_e('No posts found', 'sc-life-theme'); ?></h2>
-				<p class="section-copy"><?php esc_html_e('Add posts or create more templates to turn this into a full site.', 'sc-life-theme'); ?></p>
+				<h2 class="section-title"><?php esc_html_e('まだ投稿がありません', 'sc-life-theme'); ?></h2>
+				<p class="section-copy"><?php esc_html_e('お知らせを追加すると、この一覧に表示されます。必要に応じて固定ページや専用テンプレートも追加していけます。', 'sc-life-theme'); ?></p>
 			</div>
 		<?php endif; ?>
 	</div>

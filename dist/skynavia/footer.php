@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 				<p><?php bloginfo('name'); ?></p>
 				<p><?php bloginfo('description'); ?></p>
 			</div>
-			<nav class="footer-navigation" aria-label="<?php esc_attr_e('Footer menu', 'sc-life-theme'); ?>">
+			<nav class="footer-navigation" aria-label="<?php esc_attr_e('フッターメニュー', 'sc-life-theme'); ?>">
 				<?php
 				wp_nav_menu(
 					array(

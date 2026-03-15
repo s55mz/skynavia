@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
 				</a>
 			</div>
 
-			<nav class="main-navigation" aria-label="<?php esc_attr_e('Primary menu', 'sc-life-theme'); ?>">
+			<nav class="main-navigation" aria-label="<?php esc_attr_e('メインメニュー', 'sc-life-theme'); ?>">
 				<?php
 				wp_nav_menu(
 					array(
@@ -42,10 +42,9 @@ if (!defined('ABSPATH')) {
 
 			<div class="header-actions">
 				<a class="contact-link" href="tel:+81312345678">03-1234-5678</a>
-				<a class="button button-secondary" href="#contact"><?php esc_html_e('Contact', 'sc-life-theme'); ?></a>
-				<a class="button button-primary" href="#services"><?php esc_html_e('View Services', 'sc-life-theme'); ?></a>
+				<a class="button button-secondary" href="#contact"><?php esc_html_e('お問い合わせ', 'sc-life-theme'); ?></a>
+				<a class="button button-primary" href="#services"><?php esc_html_e('サービス一覧', 'sc-life-theme'); ?></a>
 			</div>
 		</div>
 	</header>
 	<main id="primary" class="site-main">
-

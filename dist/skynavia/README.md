@@ -17,13 +17,14 @@ bash scripts/build-release.sh
 The theme includes a GitHub release updater. Configure it from `wp-config.php`:
 
 ```php
-define('SC_LIFE_GITHUB_REPOSITORY', 'OWNER/REPO');
+define('SC_LIFE_GITHUB_REPOSITORY', 's55mz/skynavia');
 define('SC_LIFE_GITHUB_RELEASE_ASSET', 'skynavia.zip');
 define('SC_LIFE_GITHUB_TOKEN', 'github_pat_xxx');
 ```
 
 Notes:
 
+- `SC_LIFE_GITHUB_REPOSITORY` defaults to `s55mz/skynavia`, so you only need to define it if you change repositories.
 - `SC_LIFE_GITHUB_TOKEN` is only needed for private repositories.
 - The release tag should match the theme version in `style.css`.
 - Attach `dist/skynavia.zip` to the GitHub release assets.

@@ -15,7 +15,6 @@ final class SC_LIFE_Theme_Updater
 	private string $theme_name;
 	private string $version;
 	private array $config;
-	private string $package_url = '';
 
 	public function __construct(array $config)
 	{
@@ -51,8 +50,6 @@ final class SC_LIFE_Theme_Updater
 		if (!$release) {
 			return $transient;
 		}
-
-		$this->package_url = $release['package'];
 
 		$item = array(
 			'theme'       => $this->stylesheet,
@@ -100,7 +97,7 @@ final class SC_LIFE_Theme_Updater
 
 	public function download_package($reply, string $package, $upgrader, array $hook_extra)
 	{
-		if (empty($this->config['token']) || !$this->is_target_theme($hook_extra) || $package !== $this->package_url) {
+		if (empty($this->config['token']) || !$this->is_target_theme($hook_extra) || !$this->is_supported_github_package($package)) {
 			return $reply;
 		}
 
@@ -131,9 +128,17 @@ final class SC_LIFE_Theme_Updater
 				'sc_life_theme_download_failed',
 				sprintf(
 					/* translators: %d: HTTP status code */
-					__('Theme package download failed with status %d.', 'sc-life-theme'),
+					__('テーマパッケージのダウンロードに失敗しました。HTTPステータス: %d', 'sc-life-theme'),
 					$status_code
 				)
+			);
+		}
+
+		if (!$this->is_valid_zip_file($temp_file)) {
+			wp_delete_file($temp_file);
+			return new WP_Error(
+				'sc_life_theme_invalid_zip',
+				__('GitHub から取得した更新ファイルが ZIP 形式ではありませんでした。トークン権限または Release asset を確認してください。', 'sc-life-theme')
 			);
 		}
 
@@ -174,7 +179,7 @@ final class SC_LIFE_Theme_Updater
 		}
 
 		echo '<div class="notice notice-warning"><p>';
-		echo esc_html__('GitHub updater is not configured yet. Hook into sc_life_theme_updater_config and set the GitHub owner/repository before using admin updates.', 'sc-life-theme');
+		echo esc_html__('GitHub アップデータはまだ設定されていません。管理画面から更新する前に、sc_life_theme_updater_config か wp-config.php でリポジトリ情報を設定してください。', 'sc-life-theme');
 		echo '</p></div>';
 	}
 
@@ -217,7 +222,7 @@ final class SC_LIFE_Theme_Updater
 			'html_url'     => (string) ($body['html_url'] ?? ''),
 			'published_at' => (string) ($body['published_at'] ?? ''),
 			'description'  => $this->build_description($body),
-			'notes'        => wpautop(esc_html((string) ($body['body'] ?? 'No release notes provided.'))),
+			'notes'        => wpautop(esc_html((string) ($body['body'] ?? 'リリースノートはまだありません。'))),
 			'package'      => $this->resolve_package_url($body),
 		);
 
@@ -235,13 +240,13 @@ final class SC_LIFE_Theme_Updater
 		$published_at = !empty($release['published_at']) ? mysql2date(get_option('date_format'), gmdate('Y-m-d H:i:s', strtotime((string) $release['published_at']))) : '';
 		$description = sprintf(
 			'<p>%s</p><p><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></p>',
-			esc_html__('This theme is updated from GitHub Releases.', 'sc-life-theme'),
+			esc_html__('このテーマは GitHub Releases から更新されます。', 'sc-life-theme'),
 			esc_url($repo_url),
 			esc_html($this->config['repository'])
 		);
 
 		if ($published_at) {
-			$description .= '<p>' . esc_html(sprintf(__('Latest release published on %s.', 'sc-life-theme'), $published_at)) . '</p>';
+			$description .= '<p>' . esc_html(sprintf(__('最新リリース公開日: %s', 'sc-life-theme'), $published_at)) . '</p>';
 		}
 
 		return $description;
@@ -294,6 +299,29 @@ final class SC_LIFE_Theme_Updater
 		}
 
 		return $headers;
+	}
+
+	private function is_supported_github_package(string $package): bool
+	{
+		$repository = preg_quote((string) $this->config['repository'], '/');
+
+		return 1 === preg_match(
+			'/^https:\/\/(?:api\.github\.com\/repos\/' . $repository . '\/(?:releases\/assets\/\d+|zipball\/[^\/\s]+)|github\.com\/' . $repository . '\/releases\/download\/[^\/\s]+\/[^\/\s]+)$/',
+			$package
+		);
+	}
+
+	private function is_valid_zip_file(string $file): bool
+	{
+		$handle = fopen($file, 'rb');
+		if (false === $handle) {
+			return false;
+		}
+
+		$signature = fread($handle, 4);
+		fclose($handle);
+
+		return in_array($signature, array("PK\x03\x04", "PK\x05\x06", "PK\x07\x08"), true);
 	}
 
 	private function is_configured(): bool

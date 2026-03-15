@@ -19,8 +19,8 @@ function sc_life_theme_setup(): void
 
 	register_nav_menus(
 		array(
-			'primary' => __('Primary Menu', 'sc-life-theme'),
-			'footer'  => __('Footer Menu', 'sc-life-theme'),
+			'primary' => __('ヘッダーメニュー', 'sc-life-theme'),
+			'footer'  => __('フッターメニュー', 'sc-life-theme'),
 		)
 	);
 }
@@ -47,7 +47,7 @@ add_action('wp_enqueue_scripts', 'sc_life_theme_enqueue_assets');
 function sc_life_theme_updater_config(): array
 {
 	$config = array(
-		'repository'    => defined('SC_LIFE_GITHUB_REPOSITORY') ? SC_LIFE_GITHUB_REPOSITORY : '',
+		'repository'    => defined('SC_LIFE_GITHUB_REPOSITORY') ? SC_LIFE_GITHUB_REPOSITORY : 's55mz/skynavia',
 		'release_asset' => defined('SC_LIFE_GITHUB_RELEASE_ASSET') ? SC_LIFE_GITHUB_RELEASE_ASSET : get_stylesheet() . '.zip',
 		'token'         => defined('SC_LIFE_GITHUB_TOKEN') ? SC_LIFE_GITHUB_TOKEN : '',
 		'cache_ttl'     => HOUR_IN_SECONDS,
@@ -59,10 +59,10 @@ function sc_life_theme_updater_config(): array
 function sc_life_theme_fallback_menu(): void
 {
 	echo '<ul class="menu">';
-	echo '<li><a href="#services">' . esc_html__('Services', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#trust">' . esc_html__('Trust', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#metrics">' . esc_html__('Metrics', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#contact">' . esc_html__('Contact', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#services">' . esc_html__('サービス', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#trust">' . esc_html__('選ばれる理由', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#metrics">' . esc_html__('導入しやすさ', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#contact">' . esc_html__('お問い合わせ', 'sc-life-theme') . '</a></li>';
 	echo '</ul>';
 }
 
