@@ -1,0 +1,12 @@
+<svg width="880" height="280" viewBox="0 0 880 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="880" height="280" fill="white"/>
+  <text x="56" y="112" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="600" letter-spacing="-2">SkyNavia</text>
+  <line x1="58" y1="132" x2="336" y2="132" stroke="#0A0A0A" stroke-width="2"/>
+  <rect x="348" y="116" width="14" height="14" fill="#1F4FFF"/>
+  <text x="56" y="168" fill="#4D4D4D" font-family="IBM Plex Mono, monospace" font-size="18" letter-spacing="3">MONOLINE WORDMARK DIRECTION</text>
+  <rect x="58" y="196" width="280" height="44" fill="#0A0A0A"/>
+  <text x="82" y="225" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">SkyNavia</text>
+  <line x1="352" y1="218" x2="468" y2="218" stroke="#0A0A0A" stroke-width="2"/>
+  <rect x="480" y="210" width="12" height="12" fill="#1F4FFF"/>
+  <text x="532" y="224" fill="#4D4D4D" font-family="IBM Plex Mono, monospace" font-size="16" letter-spacing="2">WORDMARK + REVERSE SAMPLE</text>
+</svg>

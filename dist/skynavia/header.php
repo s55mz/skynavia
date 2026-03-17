@@ -23,9 +23,9 @@ if (!defined('ABSPATH')) {
 		<div class="container header-inner">
 			<a class="site-branding" href="<?php echo esc_url(home_url('/')); ?>">
 				<span class="brand-mark" aria-hidden="true">
-					<span class="brand-mark-bar brand-mark-bar-a"></span>
-					<span class="brand-mark-bar brand-mark-bar-b"></span>
-					<span class="brand-mark-bar brand-mark-bar-c"></span>
+					<span class="brand-frame"></span>
+					<span class="brand-axis"></span>
+					<span class="brand-node"></span>
 				</span>
 				<span class="brand-text">
 					<span class="brand-title"><?php bloginfo('name'); ?></span>
@@ -47,10 +47,10 @@ if (!defined('ABSPATH')) {
 
 			<div class="header-actions">
 				<a class="contact-link" href="tel:+81312345678">
-					<span class="contact-label"><?php esc_html_e('Call', 'sc-life-theme'); ?></span>
+					<span class="contact-label"><?php esc_html_e('Tokyo', 'sc-life-theme'); ?></span>
 					<span class="contact-value">03-1234-5678</span>
 				</a>
-				<a class="button button-primary" href="#contact"><?php esc_html_e('相談する', 'sc-life-theme'); ?></a>
+				<a class="button button-primary" href="#contact"><?php esc_html_e('Request Quote', 'sc-life-theme'); ?></a>
 			</div>
 		</div>
 	</header>

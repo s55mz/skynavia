@@ -30,7 +30,7 @@ function sc_life_theme_enqueue_assets(): void
 {
 	wp_enqueue_style(
 		'sc-life-theme-fonts',
-		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;500;600;700&display=swap',
 		array(),
 		null
 	);
@@ -59,10 +59,10 @@ function sc_life_theme_updater_config(): array
 function sc_life_theme_fallback_menu(): void
 {
 	echo '<ul class="menu">';
-	echo '<li><a href="#about">' . esc_html__('SC LIFEとは', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#solutions">' . esc_html__('対応領域', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#process">' . esc_html__('導入の流れ', 'sc-life-theme') . '</a></li>';
-	echo '<li><a href="#trust">' . esc_html__('強み', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#about">' . esc_html__('Overview', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#solutions">' . esc_html__('Capabilities', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#process">' . esc_html__('Process', 'sc-life-theme') . '</a></li>';
+	echo '<li><a href="#trust">' . esc_html__('Proof', 'sc-life-theme') . '</a></li>';
 	echo '<li><a href="#contact">' . esc_html__('お問い合わせ', 'sc-life-theme') . '</a></li>';
 	echo '</ul>';
 }

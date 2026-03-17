@@ -1,15 +1,16 @@
 name: Build Theme Release
 
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  attach-theme-zip:
+  build-and-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +20,8 @@ jobs:
       - name: Build release ZIP
         run: bash scripts/build-release.sh
 
-      - name: Upload ZIP to GitHub release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG_NAME: ${{ github.event.release.tag_name }}
-        run: gh release upload "$TAG_NAME" "dist/skynavia.zip" --clobber
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/skynavia.zip
+          generate_release_notes: true

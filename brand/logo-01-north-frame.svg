@@ -1,0 +1,14 @@
+<svg width="880" height="280" viewBox="0 0 880 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="880" height="280" fill="white"/>
+  <rect x="52" y="54" width="92" height="92" stroke="#0A0A0A" stroke-width="4"/>
+  <line x1="67.259" y1="128.359" x2="129.259" y2="74.359" stroke="#0A0A0A" stroke-width="4"/>
+  <circle cx="126" cy="72" r="9" fill="#1F4FFF"/>
+  <text x="182" y="107" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">SkyNavia</text>
+  <text x="184" y="142" fill="#4D4D4D" font-family="IBM Plex Mono, monospace" font-size="18" letter-spacing="3">SEMICONDUCTOR PROCUREMENT</text>
+  <rect x="54" y="188" width="54" height="54" stroke="#0A0A0A" stroke-width="3"/>
+  <line x1="63.283" y1="232.389" x2="99.283" y2="200.389" stroke="#0A0A0A" stroke-width="3"/>
+  <circle cx="99" cy="199" r="6" fill="#1F4FFF"/>
+  <rect x="154" y="186" width="264" height="56" fill="#0A0A0A"/>
+  <text x="182" y="222" fill="white" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">SkyNavia</text>
+  <text x="472" y="224" fill="#4D4D4D" font-family="IBM Plex Mono, monospace" font-size="16" letter-spacing="2">HORIZONTAL + ICON + REVERSE</text>
+</svg>
