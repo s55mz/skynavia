@@ -12,62 +12,69 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 <section class="hero">
-	<div class="container hero-grid">
+	<div class="hero-shell">
 		<div class="hero-copy">
-			<p class="eyebrow"><?php esc_html_e('Industrial Sourcing Interface', 'sc-life-theme'); ?></p>
-			<div class="hero-badge"><?php esc_html_e('国内外ネットワーク対応', 'sc-life-theme'); ?></div>
+			<p class="eyebrow"><?php esc_html_e('SC LIFE / Industrial Sourcing Interface', 'sc-life-theme'); ?></p>
 			<h1 class="hero-title">
-				<span><?php esc_html_e('面倒な探索工程を、', 'sc-life-theme'); ?></span>
-				<span class="hero-title-accent"><?php esc_html_e('戦略的な調達体験へ。', 'sc-life-theme'); ?></span>
+				<span><?php esc_html_e('探索の複雑さを、', 'sc-life-theme'); ?></span>
+				<span class="hero-title-accent"><?php esc_html_e('静かに整理する。', 'sc-life-theme'); ?></span>
 			</h1>
 			<p class="hero-lead">
-				<?php esc_html_e('SC LIFE は、入手困難な電子部品や特殊機材の調達を、情報整理から見積依頼まで滑らかにつなぐためのコーポレートサイトテーマです。技術力・信頼性・スピード感を、図形と余白で印象づける構成へ再設計しています。', 'sc-life-theme'); ?>
+				<?php esc_html_e('SC LIFE は、入手困難な電子部品や特殊機材の調達を受ける企業向けに、判断のための情報を余白と階層で整えるコーポレートテーマです。派手な演出ではなく、精度と落ち着きで信頼を作ります。', 'sc-life-theme'); ?>
 			</p>
 			<ul class="hero-points">
 				<li><?php esc_html_e('EOL・廃番部品の探索', 'sc-life-theme'); ?></li>
 				<li><?php esc_html_e('試作から量産まで相談可能', 'sc-life-theme'); ?></li>
 				<li><?php esc_html_e('品質保証と代替提案を両立', 'sc-life-theme'); ?></li>
 			</ul>
+			<div class="hero-facts">
+				<div class="hero-fact">
+					<span class="hero-fact-label"><?php esc_html_e('Coverage', 'sc-life-theme'); ?></span>
+					<strong><?php esc_html_e('見積・調達・在庫相談', 'sc-life-theme'); ?></strong>
+				</div>
+				<div class="hero-fact">
+					<span class="hero-fact-label"><?php esc_html_e('Response', 'sc-life-theme'); ?></span>
+					<strong><?php esc_html_e('最短即日で方向性提示', 'sc-life-theme'); ?></strong>
+				</div>
+			</div>
 			<div class="hero-actions">
 				<a class="button button-primary" href="#contact"><?php esc_html_e('案件を相談する', 'sc-life-theme'); ?></a>
 				<a class="button button-secondary" href="#solutions"><?php esc_html_e('対応領域を見る', 'sc-life-theme'); ?></a>
 			</div>
 		</div>
 		<div class="hero-visual" aria-hidden="true">
-			<div class="hero-scene">
-				<div class="scene-grid"></div>
-				<div class="scene-track"></div>
-				<div class="scene-beam"></div>
-				<div class="scene-machine scene-machine-a"></div>
-				<div class="scene-machine scene-machine-b"></div>
-				<div class="scene-machine scene-machine-c"></div>
-				<div class="scene-node scene-node-a"></div>
-				<div class="scene-node scene-node-b"></div>
-				<div class="scene-node scene-node-c"></div>
-				<div class="scene-card scene-card-primary">
-					<span class="scene-card-label"><?php esc_html_e('Coverage', 'sc-life-theme'); ?></span>
-					<strong><?php esc_html_e('見積・調達・在庫相談', 'sc-life-theme'); ?></strong>
+			<div class="hero-stage">
+				<div class="stage-panel stage-panel-dark"></div>
+				<div class="stage-panel stage-panel-light"></div>
+				<div class="stage-track"></div>
+				<div class="stage-lane stage-lane-a"></div>
+				<div class="stage-lane stage-lane-b"></div>
+				<div class="stage-block stage-block-a"></div>
+				<div class="stage-block stage-block-b"></div>
+				<div class="stage-block stage-block-c"></div>
+				<div class="stage-piece stage-piece-a"></div>
+				<div class="stage-piece stage-piece-b"></div>
+				<div class="stage-piece stage-piece-c"></div>
+				<div class="stage-label stage-label-a"><?php esc_html_e('SC LIFE', 'sc-life-theme'); ?></div>
+				<div class="stage-label stage-label-b"><?php esc_html_e('Industrial Network', 'sc-life-theme'); ?></div>
+				<div class="stage-note">
+					<p class="stage-note-title"><?php esc_html_e('PoC 相談対応', 'sc-life-theme'); ?></p>
+					<p><?php esc_html_e('条件が未整理な段階でも、相談内容を静かに分解して進めます。', 'sc-life-theme'); ?></p>
 				</div>
-				<div class="scene-card scene-card-secondary">
-					<span class="scene-card-label"><?php esc_html_e('Response', 'sc-life-theme'); ?></span>
-					<strong><?php esc_html_e('最短即日で方向性提示', 'sc-life-theme'); ?></strong>
-				</div>
-			</div>
-			<div class="floating-contact">
-				<p class="floating-contact-title"><?php esc_html_e('PoC 相談対応', 'sc-life-theme'); ?></p>
-				<p><?php esc_html_e('仕様が固まっていない段階でも、調達条件の整理から伴走します。', 'sc-life-theme'); ?></p>
 			</div>
 		</div>
 	</div>
 </section>
 
 <section id="about" class="section section-story">
-	<div class="container">
-		<div class="story-panel">
-			<p class="eyebrow eyebrow-light"><?php esc_html_e('What SC LIFE Solves', 'sc-life-theme'); ?></p>
-			<h2 class="section-title section-title-light"><?php esc_html_e('SC LIFE とは、調達担当者の負荷を減らし、判断を早めるための情報設計です。', 'sc-life-theme'); ?></h2>
+	<div class="section-shell story-shell">
+		<div class="story-intro">
+			<p class="eyebrow"><?php esc_html_e('What SC LIFE Solves', 'sc-life-theme'); ?></p>
+			<h2 class="section-title"><?php esc_html_e('SC LIFE とは、調達担当者の負荷を減らし、判断を前に進めるための情報設計です。', 'sc-life-theme'); ?></h2>
+		</div>
+		<div class="story-body">
 			<div class="story-copy">
-				<p><?php esc_html_e('難調達品の問い合わせは、対象部品の特性、代替候補、品質条件、希望納期など、初期段階で整理すべき情報が多くなりがちです。', 'sc-life-theme'); ?></p>
+				<p><?php esc_html_e('難調達品の問い合わせでは、対象部品の特性、代替候補、品質条件、希望納期など、初期段階で整理すべき情報が多くなります。', 'sc-life-theme'); ?></p>
 				<p><?php esc_html_e('このテーマは、そうした複雑な相談を受ける企業向けに、要点を先に伝え、相談への心理的ハードルを下げる見せ方を意図しています。', 'sc-life-theme'); ?></p>
 			</div>
 			<div class="point-board">
@@ -89,11 +96,11 @@ get_header();
 </section>
 
 <section id="solutions" class="section">
-	<div class="container">
+	<div class="section-shell">
 		<div class="section-heading">
 			<p class="eyebrow"><?php esc_html_e('Solutions', 'sc-life-theme'); ?></p>
 			<h2 class="section-title"><?php esc_html_e('課題起点で整理した、4つの相談導線。', 'sc-life-theme'); ?></h2>
-			<p class="section-copy"><?php esc_html_e('参考サイトのような世界観を活かしつつ、SC LIFE では用途別にサービスを選びやすく構成します。', 'sc-life-theme'); ?></p>
+			<p class="section-copy"><?php esc_html_e('全面を使ったレイアウトで、用途別の相談入口をはっきり分けます。', 'sc-life-theme'); ?></p>
 		</div>
 		<div class="service-grid">
 			<article class="service-card">
@@ -121,7 +128,7 @@ get_header();
 </section>
 
 <section id="process" class="section section-process">
-	<div class="container">
+	<div class="section-shell">
 		<div class="section-heading">
 			<p class="eyebrow"><?php esc_html_e('Process', 'sc-life-theme'); ?></p>
 			<h2 class="section-title"><?php esc_html_e('相談から提案までの流れも、迷わせず見せる。', 'sc-life-theme'); ?></h2>
@@ -147,7 +154,7 @@ get_header();
 </section>
 
 <section id="trust" class="section">
-	<div class="container">
+	<div class="section-shell">
 		<div class="section-heading">
 			<p class="eyebrow"><?php esc_html_e('Trust Signals', 'sc-life-theme'); ?></p>
 			<h2 class="section-title"><?php esc_html_e('安心材料は、数字と根拠で先に見せる。', 'sc-life-theme'); ?></h2>
@@ -174,7 +181,7 @@ get_header();
 </section>
 
 <section id="contact" class="section">
-	<div class="container">
+	<div class="section-shell">
 		<div class="contact-panel">
 			<div class="contact-copy">
 				<p class="eyebrow"><?php esc_html_e('Contact', 'sc-life-theme'); ?></p>

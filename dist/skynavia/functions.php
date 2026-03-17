@@ -30,7 +30,7 @@ function sc_life_theme_enqueue_assets(): void
 {
 	wp_enqueue_style(
 		'sc-life-theme-fonts',
-		'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap',
+		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap',
 		array(),
 		null
 	);
