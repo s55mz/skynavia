@@ -18,15 +18,20 @@ if (!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="site-shell">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('コンテンツへ移動', 'sc-life-theme'); ?></a>
 	<header class="site-header">
 		<div class="container header-inner">
-			<div class="site-branding">
-				<a class="brand-mark" href="<?php echo esc_url(home_url('/')); ?>" aria-hidden="true"></a>
-				<a class="brand-text" href="<?php echo esc_url(home_url('/')); ?>">
+			<a class="site-branding" href="<?php echo esc_url(home_url('/')); ?>">
+				<span class="brand-mark" aria-hidden="true">
+					<span class="brand-mark-bar brand-mark-bar-a"></span>
+					<span class="brand-mark-bar brand-mark-bar-b"></span>
+					<span class="brand-mark-bar brand-mark-bar-c"></span>
+				</span>
+				<span class="brand-text">
 					<span class="brand-title"><?php bloginfo('name'); ?></span>
 					<span class="brand-tagline"><?php bloginfo('description'); ?></span>
-				</a>
-			</div>
+				</span>
+			</a>
 
 			<nav class="main-navigation" aria-label="<?php esc_attr_e('メインメニュー', 'sc-life-theme'); ?>">
 				<?php
@@ -41,9 +46,11 @@ if (!defined('ABSPATH')) {
 			</nav>
 
 			<div class="header-actions">
-				<a class="contact-link" href="tel:+81312345678">03-1234-5678</a>
-				<a class="button button-secondary" href="#contact"><?php esc_html_e('お問い合わせ', 'sc-life-theme'); ?></a>
-				<a class="button button-primary" href="#services"><?php esc_html_e('サービス一覧', 'sc-life-theme'); ?></a>
+				<a class="contact-link" href="tel:+81312345678">
+					<span class="contact-label"><?php esc_html_e('Call', 'sc-life-theme'); ?></span>
+					<span class="contact-value">03-1234-5678</span>
+				</a>
+				<a class="button button-primary" href="#contact"><?php esc_html_e('相談する', 'sc-life-theme'); ?></a>
 			</div>
 		</div>
 	</header>

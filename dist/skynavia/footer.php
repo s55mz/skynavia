@@ -13,8 +13,9 @@ if (!defined('ABSPATH')) {
 	<footer class="site-footer">
 		<div class="container footer-grid">
 			<div class="site-info">
-				<p><?php bloginfo('name'); ?></p>
+				<p class="footer-brand"><?php bloginfo('name'); ?></p>
 				<p><?php bloginfo('description'); ?></p>
+				<p class="footer-meta"><?php esc_html_e('Industrial sourcing theme for premium BtoB communication.', 'sc-life-theme'); ?></p>
 			</div>
 			<nav class="footer-navigation" aria-label="<?php esc_attr_e('フッターメニュー', 'sc-life-theme'); ?>">
 				<?php

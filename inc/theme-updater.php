@@ -262,12 +262,12 @@ final class SC_LIFE_Theme_Updater
 					continue;
 				}
 
-				if (!empty($this->config['token']) && !empty($asset['url'])) {
-					return (string) $asset['url'];
-				}
-
 				if (!empty($asset['browser_download_url'])) {
 					return (string) $asset['browser_download_url'];
+				}
+
+				if (!empty($this->config['token']) && !empty($asset['url'])) {
+					return (string) $asset['url'];
 				}
 			}
 		}
