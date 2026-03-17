@@ -12,81 +12,38 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 <section class="hero">
+	<div class="hero-media" aria-hidden="true">
+		<div class="hero-mast"></div>
+		<div class="hero-boom"></div>
+		<div class="hero-cable hero-cable-a"></div>
+		<div class="hero-cable hero-cable-b"></div>
+		<div class="hero-figure hero-figure-a"></div>
+		<div class="hero-figure hero-figure-b"></div>
+		<div class="hero-groundline"></div>
+	</div>
+	<div class="hero-overlay"></div>
 	<div class="hero-frame">
+		<p class="hero-index"><?php esc_html_e('SkyNavia / Semiconductor Procurement', 'sc-life-theme'); ?></p>
 		<div class="hero-grid">
 			<div class="hero-copy">
-				<p class="hero-index">001 / START POINT</p>
-				<p class="eyebrow"><?php esc_html_e('SkyNavia / Semiconductor Procurement', 'sc-life-theme'); ?></p>
 				<h1 class="hero-title">
-					<span><?php esc_html_e('止まりそうな調達に、', 'sc-life-theme'); ?></span>
-					<span><?php esc_html_e('進める根拠を。', 'sc-life-theme'); ?></span>
+					<span><?php esc_html_e('Opening', 'sc-life-theme'); ?></span>
+					<span><?php esc_html_e('the next', 'sc-life-theme'); ?></span>
+					<span><?php esc_html_e('supply route.', 'sc-life-theme'); ?></span>
 				</h1>
 				<p class="hero-lead">
-					<?php esc_html_e('SkyNavia は、半導体の型番、納期、代替候補、品質条件を整理し、ビジネスクライアントが次の判断へ進める状態をつくる調達ブランドです。', 'sc-life-theme'); ?>
+					<?php esc_html_e('供給が見えにくい半導体調達に、探索、代替案、品質条件をまとめた進めやすい提案をつくります。', 'sc-life-theme'); ?>
 				</p>
 				<div class="hero-actions">
 					<a class="button button-primary" href="#contact"><?php esc_html_e('Request Quote', 'sc-life-theme'); ?></a>
 					<a class="button button-secondary" href="#solutions"><?php esc_html_e('Capabilities', 'sc-life-theme'); ?></a>
 				</div>
-				<div class="hero-summary">
-					<p><?php esc_html_e('対象: MCU / FPGA / Analog / Memory / Sensor', 'sc-life-theme'); ?></p>
-					<p><?php esc_html_e('対応: 難調達 / EOL / 代替提案 / 真贋確認', 'sc-life-theme'); ?></p>
-				</div>
 			</div>
-			<div class="hero-visual" aria-hidden="true">
-				<div class="hero-panel">
-					<div class="panel-meta">
-						<span>Procurement Map</span>
-						<span>JP / Global</span>
-					</div>
-					<p class="panel-kicker"><?php esc_html_e('Request Sheet', 'sc-life-theme'); ?></p>
-					<div class="panel-part-number">AD8421BRZ</div>
-					<div class="panel-spec-grid">
-						<div class="spec-item">
-							<span class="spec-label"><?php esc_html_e('Quantity', 'sc-life-theme'); ?></span>
-							<strong>2,400 pcs</strong>
-						</div>
-						<div class="spec-item">
-							<span class="spec-label"><?php esc_html_e('Required', 'sc-life-theme'); ?></span>
-							<strong>2026 / 05</strong>
-						</div>
-						<div class="spec-item">
-							<span class="spec-label"><?php esc_html_e('Status', 'sc-life-theme'); ?></span>
-							<strong><?php esc_html_e('Hard to source', 'sc-life-theme'); ?></strong>
-						</div>
-						<div class="spec-item">
-							<span class="spec-label"><?php esc_html_e('Need', 'sc-life-theme'); ?></span>
-							<strong><?php esc_html_e('Alternate review', 'sc-life-theme'); ?></strong>
-						</div>
-					</div>
-					<div class="panel-route">
-						<div class="route-step">
-							<span class="route-index">01</span>
-							<div>
-								<p class="route-label"><?php esc_html_e('Search', 'sc-life-theme'); ?></p>
-								<p class="route-text"><?php esc_html_e('在庫と供給網を探索', 'sc-life-theme'); ?></p>
-							</div>
-						</div>
-						<div class="route-step">
-							<span class="route-index">02</span>
-							<div>
-								<p class="route-label"><?php esc_html_e('Substitute', 'sc-life-theme'); ?></p>
-								<p class="route-text"><?php esc_html_e('代替候補と条件差を整理', 'sc-life-theme'); ?></p>
-							</div>
-						</div>
-						<div class="route-step">
-							<span class="route-index">03</span>
-							<div>
-								<p class="route-label"><?php esc_html_e('Verify', 'sc-life-theme'); ?></p>
-								<p class="route-text"><?php esc_html_e('品質とトレーサビリティを確認', 'sc-life-theme'); ?></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero-aside">
-					<span class="hero-aside-serial">NAV / 11</span>
-					<p class="hero-aside-title"><?php esc_html_e('Semiconductor sourcing, framed for decision making.', 'sc-life-theme'); ?></p>
-				</div>
+			<div class="hero-news">
+				<p class="hero-news-label"><?php esc_html_e('News', 'sc-life-theme'); ?></p>
+				<p class="hero-news-date">2026.03.17</p>
+				<p class="hero-news-copy"><?php esc_html_e('難調達、EOL、代替提案までを一つの窓口で扱う SkyNavia のテーマを更新しました。', 'sc-life-theme'); ?></p>
+				<a class="hero-news-link" href="#about"><?php esc_html_e('Read more', 'sc-life-theme'); ?></a>
 			</div>
 		</div>
 	</div>
